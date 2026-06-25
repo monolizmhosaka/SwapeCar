@@ -23,7 +23,7 @@ public class CarController : MonoBehaviour
             Vector2 endPos = Input.mousePosition;
             float swipeLenght = endPos.x - startPos.x;
 
-            this.speed = swipeLenght / 2000.0f;
+            this.speed = swipeLenght / 2500.0f;
         }
 
         transform.Translate(this.speed, 0, 0);
