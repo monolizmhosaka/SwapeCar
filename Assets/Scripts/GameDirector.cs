@@ -7,6 +7,7 @@ public class GameDirector : MonoBehaviour
     GameObject lifeText;
 
     bool isGameOver = false;
+    bool test = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
