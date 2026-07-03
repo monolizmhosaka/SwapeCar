@@ -4,11 +4,13 @@ public class ArrowController : MonoBehaviour
 {
     GameObject car;
     bool waitDestroyFlag = false;
+    float arrowSpeed = 0.1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         car = GameObject.Find("car_0");
+        arrowSpeed = Random.Range(0.1f, 0.5f);
     }
 
     // Update is called once per frame
@@ -16,7 +18,7 @@ public class ArrowController : MonoBehaviour
     {
         if ( waitDestroyFlag ) { return; }
 
-        transform.Translate(0, -0.1f, 0);
+        transform.Translate(0, -arrowSpeed, 0);
 
         if ( transform.position.y < -5.0f )
         {
