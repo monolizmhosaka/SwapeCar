@@ -3,7 +3,12 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     float speed = 0f;
-    public int life = 3;
+
+    private int _life = 3;
+    public int Life
+    {
+        get { return _life; }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,6 +41,21 @@ public class CarController : MonoBehaviour
 
         transform.Translate(this.speed, 0, 0);
         this.speed *= 0.98f;
+    }
+
+    public void IncreaseHp()
+    {
+        // すでに死亡している場合は回復しない
+        if ( this._life <= 0) return;
+
+        this._life++;
+        if (this._life > 3) this._life = 3;
+    }
+
+    public void DecreaseHp()
+    {
+        this._life--;
+        if (this._life < 0) this._life = 0;
     }
 
     void OnBecameInvisible()

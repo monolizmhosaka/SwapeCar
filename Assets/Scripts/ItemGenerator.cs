@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class ArrowGenerator : MonoBehaviour
+public class ItemGenerator : MonoBehaviour
 {
-    public GameObject arrowPrefab;
+    public GameObject itemPrefab;
     GameObject car;
-    float span = 1.0f;
+
+    float span = 5.0f;
     float delta = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,7 +17,7 @@ public class ArrowGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( car.GetComponent<CarController>().Life <= 0)
+        if (car.GetComponent<CarController>().Life <= 0)
         {
             return;
         }
@@ -25,8 +26,8 @@ public class ArrowGenerator : MonoBehaviour
         if ( this.delta > this.span )
         {
             this.delta = 0;
-            GameObject go = Instantiate(arrowPrefab);
-            float px = Random.Range(-9, 10);
+            GameObject go = Instantiate(itemPrefab);
+            float px = Random.Range(-6, 7);
             go.transform.position = new Vector3(px, 7, 0);
         }
     }

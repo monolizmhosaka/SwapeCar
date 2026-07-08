@@ -1,24 +1,22 @@
 using UnityEngine;
 
-public class ArrowController : MonoBehaviour
+public class ItemController : MonoBehaviour
 {
     GameObject car;
     bool waitDestroyFlag = false;
-    float arrowSpeed = 0.1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         car = GameObject.Find("car_0");
-        arrowSpeed = Random.Range(0.1f, 0.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( waitDestroyFlag ) { return; }
+        if (waitDestroyFlag) { return; }
 
-        transform.Translate(0, -arrowSpeed, 0);
+        transform.Translate(0, -0.1f, 0);
 
         if ( transform.position.y < -5.0f )
         {
@@ -36,7 +34,7 @@ public class ArrowController : MonoBehaviour
 
         if (d < r1 + r2)
         {
-            car.GetComponent<CarController>().DecreaseHp();
+            car.GetComponent<CarController>().IncreaseHp();
 
             // 1. 画像とスクリプトを止める（見た目上は消えたように見える）
             if (TryGetComponent<SpriteRenderer>(out var sprite)) sprite.enabled = false;

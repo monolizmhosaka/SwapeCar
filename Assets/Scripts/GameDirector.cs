@@ -20,10 +20,10 @@ public class GameDirector : MonoBehaviour
     {
         CarController carController = this.car.GetComponent<CarController>();
 
-        if (carController.life > 0 )
+        if (carController.Life > 0 )
         { 
             string lifeString = "";
-            for (int i = 0; i < carController.life; i++)
+            for (int i = 0; i < carController.Life; i++)
             {
                 lifeString += "■";
             }
