@@ -50,6 +50,8 @@ public class CarController : MonoBehaviour
 
         this._life++;
         if (this._life > 3) this._life = 3;
+
+        //Github practice
     }
 
     public void DecreaseHp()
