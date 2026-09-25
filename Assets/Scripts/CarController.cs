@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    // 車のスピード
+
     float speed = 0f;
 
     private int _life = 3;
