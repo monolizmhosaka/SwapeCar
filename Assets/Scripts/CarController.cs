@@ -4,8 +4,8 @@ public class CarController : MonoBehaviour
 {
     // 車のスピード
     // Test  Comment
-    float speed = 20f;
-    double jjj;
+    float speed = 10f;
+    int jjj = 0;
 
     private int _life = 3;
     public int Life
